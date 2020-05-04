@@ -5,12 +5,12 @@
     "publicSshKey": {
       "type": "string",
       "metadata": {
-        "description": "So you can conntect the thing to the other thing."
+        "description": "The ssh key you will use to connect to your compute resources."
       }
     },
     "workspaceName": {
       "type": "string",
-      "defaultValue": "[concat('workspace', uniqueString(resourceGroup().id))]",
+      "defaultValue": "MyWorkspace",
       "metadata": {
         "description": "Specifies the name of the Azure Machine Learning service workspace."
       }
@@ -47,14 +47,14 @@
       ],
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
-        "description": "Specifies the location for all resources. try using one that doesn't overlap with your time zone."
+        "description": "Specifies the location for your resources."
       }
     },
     "vnetName": {
       "type": "string",
-      "defaultValue": "skynet",
+      "defaultValue": "rl-vnet",
       "metadata": {
-        "description": "We recomend allowing the template to create the vnet for you."
+        "description": "We recomend allowing the template to create the virtual network for you."
       }
     }
   },
