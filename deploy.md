@@ -3,18 +3,20 @@
 - ML workspaces are inteded to be shared. Each user will need to create their own compute instance. We recomend using a Dv3 if you aren't planing to do training locally or a NC6 if you are.
 
 # Instructions
-- [Go here](https://portal.azure.com/#create/Microsoft.Template)
-- click Build your own template in the editor
-- paste code
-- review and create
+- Generate an [ssh key](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-ssh-keys-detailed)
+- Click [![Deploy to Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/deploybutton.png)](https://azuredeploy.net/)
+- Upload the ssh key when you are done
+## Deploying manually
+- If you want to deploy without using this ARM template you will need to follow these [instructions](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-enable-virtual-network#compute-instance)
+- Give the compute instances + clusters your compute instances public ssh key and username azureuser
 
 # Details
 This template creates the following
 - KeyVault
-- storage account
+- Storage account
 - AppInsight
-- virtual network
-- network security group
+- Virtual network
+- Network security group
 - NC6 low pri gpu training cluster
 - Dv3 dedicated cpu training cluster
 
@@ -26,6 +28,4 @@ The tradeoff for using low-priority compute is that that compute may not be avai
 Low-priority compute are offered at a significantly reduced price compared with dedicated compute. For pricing details, see Batch Pricing.
 
 
-# Deploying manually
-- if you want to deploy without this you will need to follow these [instructions](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-enable-virtual-network)
-- give the compute instances your ci public ssh key and username azureuser
+
